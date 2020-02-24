@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/shared/models/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  // Some Bulk Data
+  Companies = ["Best Electronics", "Vision Electronics", "MK Electronics", "Chowdhury Electronics"]
+  Categories = ["Television", "Refrigerator", "Display", "Air Conditionar", "Air Cooler"]
+  Brands = ["Sony", "Walton", "Samsung", "Vision", "Hundai", "Singer"]
+
+  model = new Product();
+
+  onSubmit() {
+    console.log(this.model);
+    this.router.navigate(['/dashboard']);
+  }
+
 
 }

@@ -1,1 +1,61 @@
-<p>add-product works!</p>
+<div class="jumbotron">
+    <h1>Add New Product</h1>
+    <form (ngSubmit)="onSubmit()" #addProductForm="ngForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Company">Company</label>
+                    <!-- <input type="text" class="form-control" required [(ngModel)]="model.Company" name="Company"
+                        #Company="ngModel"> -->
+                    <select class="form-control" [(ngModel)]="model.Company" name="Company" #Company="ngModel">
+                        <option *ngFor="let company of this.Companies" [value]="company">
+                            {{company}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Category">Category</label>
+                    <select class="form-control" [(ngModel)]="model.Category" name="Category" #Category="ngModel">
+                        <option *ngFor="let category of this.Categories" [value]="category">
+                            {{category}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Brand">Brand</label>
+                    <select class="form-control" [(ngModel)]="model.Brand" name="Brand" #Brand="ngModel">
+                        <option *ngFor="let brand of this.Brands" [value]="brand">
+                            {{brand}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Name">Product Name</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.Name" name="Name"
+                        #Name="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="Unit">Product Unit</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.Unit" name="Unit"
+                        #Unit="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="Description">Product Description</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.Description" name="Description"
+                        #Description="ngModel">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
