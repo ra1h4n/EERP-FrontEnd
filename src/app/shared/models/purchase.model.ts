@@ -11,5 +11,5 @@ export class Purchase {
     ProductName: string;
     Quantity: number;
     Rate: number;
-    Total: number = this.Quantity * this.Rate;
+    Total: number;
 }

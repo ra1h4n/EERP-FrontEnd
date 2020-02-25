@@ -5,39 +5,39 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="BatchNo">BatchNo</label>
-                    <input type="text" class="form-control" required [(ngModel)]="model.BatchNo" name="BatchNo"
+                    <input type="text" class="form-control" required [(ngModel)]="modelHead.BatchNo" name="BatchNo"
                         #BatchNo="ngModel">
                 </div>
 
                 <div class="form-group">
                     <label for="PurchaseDate">Purchase Date</label>
-                    <input type="text" class="form-control" required [(ngModel)]="model.PurchaseDate"
+                    <input type="text" class="form-control" required [(ngModel)]="modelHead.PurchaseDate"
                         name="PurchaseDate" #PurchaseDate="ngModel">
                 </div>
 
                 <div class="form-group">
                     <label for="InvoiceID">InvoiceID</label>
-                    <input type="text" class="form-control" required [(ngModel)]="model.InvoiceID" name="InvoiceID"
+                    <input type="text" class="form-control" required [(ngModel)]="modelHead.InvoiceID" name="InvoiceID"
                         #InvoiceID="ngModel">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="Company">Company</label>
-                    <input type="text" class="form-control" required [(ngModel)]="model.Company" name="Company"
+                    <label for="Company">Supplier</label>
+                    <input type="text" class="form-control" required [(ngModel)]="modelHead.Company" name="Company"
                         #Company="ngModel">
                 </div>
 
                 <div class="form-group">
                     <label for="PaymentType">Payment Type</label>
-                    <input type="text" class="form-control" required [(ngModel)]="model.PaymentType" name="PaymentType"
-                        #PaymentType="ngModel">
+                    <input type="text" class="form-control" required [(ngModel)]="modelHead.PaymentType"
+                        name="PaymentType" #PaymentType="ngModel">
                 </div>
 
                 <div class="form-group">
                     <label for="Details">Details</label>
-                    <input type="text" class="form-control" required [(ngModel)]="model.Details" name="Details"
+                    <input type="text" class="form-control" required [(ngModel)]="modelHead.Details" name="Details"
                         #Details="ngModel">
                 </div>
             </div>
@@ -51,28 +51,29 @@
                         <th>Quantity</th>
                         <th>Rate</th>
                         <th>Total</th>
+                        <th style="text-align: center; cursor: pointer;" (click)="addRow()">
+                            <i class="fa fa-plus"></i>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr *ngFor="let model of models; let i = index;">
                         <td>
-                            <select class="form-control" [(ngModel)]="model.Category" name="Category"
-                                #Category="ngModel">
+                            <select class="form-control" [(ngModel)]="model.Category" name="{{i}}Category">
                                 <option *ngFor="let category of this.Categories" [value]="category">
                                     {{category}}
                                 </option>
                             </select>
                         </td>
                         <td>
-                            <select class="form-control" [(ngModel)]="model.Brand" name="Brand" #Brand="ngModel">
+                            <select class="form-control" [(ngModel)]="model.Brand" name="{{i}}Brand">
                                 <option *ngFor="let brand of this.Brands" [value]="brand">
                                     {{brand}}
                                 </option>
                             </select>
                         </td>
                         <td>
-                            <select class="form-control" [(ngModel)]="model.ProductName" name="ProductName"
-                                #ProductName="ngModel">
+                            <select class="form-control" [(ngModel)]="model.ProductName" name="{{i}}ProductName">
                                 <option *ngFor="let name of this.ProductNames" [value]="name">
                                     {{name}}
                                 </option>
@@ -80,15 +81,18 @@
                         </td>
                         <td>
                             <input type="number" class="form-control" required [(ngModel)]="model.Quantity"
-                                name="Quantity" #Quantity="ngModel" placeholder="0" (ngModelChange)="updateTotal()">
+                                name="{{i}}Quantity" placeholder="0" (ngModelChange)="updateTotal(i)">
                         </td>
                         <td>
-                            <input type=" number" class="form-control" required [(ngModel)]="model.Rate" name="Rate"
-                                #Rate="ngModel" placeholder="0" (ngModelChange)="updateTotal()">
+                            <input type="number" class="form-control" required [(ngModel)]="model.Rate" name="{{i}}Rate"
+                                placeholder="0" (ngModelChange)="updateTotal(i)">
                         </td>
                         <td>
-                            <input type="number" class="form-control" [(ngModel)]="model.Total" name="Total"
-                                #Total="ngModel" readonly>
+                            <input type="number" class="form-control" [(ngModel)]="model.Total" name="{{i}}Total"
+                                readonly>
+                        </td>
+                        <td style="text-align: center; cursor: pointer;" (click)="removeRow(i)">
+                            <i class="fa fa-trash"></i>
                         </td>
                     </tr>
                 </tbody>

@@ -30,6 +30,7 @@ export class AddSaleComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.modelHead);
     console.log(this.models);
     this.router.navigate(['/dashboard']);
   }

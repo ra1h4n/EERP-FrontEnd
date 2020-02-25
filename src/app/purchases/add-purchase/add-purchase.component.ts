@@ -17,20 +17,40 @@ export class AddPurchaseComponent implements OnInit {
   Brands = ["Sony", "Xiaomi", "Apple", "Google"];
   Categories = ["Television", "Mobile Phone"];
 
-  model: Purchase = new Purchase();
+  modelHead = new Purchase();
+  models: Array<Purchase> = [];
 
   ngOnInit() {
-
+    let first = new Purchase();
+    first.Quantity = 25;
+    this.models.push(first);
   }
 
   onSubmit() {
-    this.model.Total = this.model.Quantity * this.model.Rate;
-    console.log(this.model);
+    console.log(this.modelHead)
+    console.log(this.models);
 
     this.router.navigate(['/dashboard']);
   }
 
-  updateTotal() {
-    this.model.Total = Number((this.model.Quantity * this.model.Rate).toFixed(2));
+  updateTotal(rowIndex) {
+    this.models[rowIndex].Total = Number((this.models[rowIndex].Quantity * this.models[rowIndex].Rate).toFixed(2));
+  }
+
+  addRow() {
+    let newRow = new Purchase();
+    newRow.Quantity = 20;
+    newRow.Rate = 25;
+    this.models.push(newRow);
+  }
+
+  removeRow(rowIndex) {
+    if (this.models.length == 1) {
+      // Can't Delete Bro. You got only one ROW.
+      return false;
+    } else {
+      this.models.splice(rowIndex, 1);
+      return true;
+    }
   }
 }
