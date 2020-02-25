@@ -10,6 +10,7 @@ import { FormsModule } from "@angular/forms";
 import { AddPurchaseComponent } from './purchases/add-purchase/add-purchase.component';
 import { AddSaleComponent } from './sales/add-sale/add-sale.component';
 import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.component';
+import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.comp
     AddProductComponent,
     AddPurchaseComponent,
     AddSaleComponent,
-    AddSupplierComponent
+    AddSupplierComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,

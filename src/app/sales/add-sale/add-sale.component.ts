@@ -17,19 +17,45 @@ export class AddSaleComponent implements OnInit {
   Categories = ["Television", "Mobile Phone"];
   Batches = ["Jan2020", "Feb2020", "Apr2018"]
 
-  model = new Sale()
+  modelHead = new Sale();
+  models: Array<Sale> = [];
+
   ngOnInit() {
-    this.model.AvailableQuantity = 99;
-    this.model.ProductUnit = "Pcs"
+    this.modelHead.SaleDate = new Date().toString();
+
+    let first = new Sale();
+    first.AvailableQuantity = 10;
+    first.ProductUnit = "PCs";
+    this.models.push(first);
   }
 
   onSubmit() {
-    console.log(this.model);
+    console.log(this.models);
     this.router.navigate(['/dashboard']);
   }
 
-  updateTotal() {
-    this.model.Total = (this.model.SaleQuantity * this.model.SaleRate) - (this.model.SaleQuantity * this.model.SaleRate * this.model.DiscountInPercent / 100)
+  updateTotal(rowIndex) {
+    this.models[rowIndex].Total = (this.models[rowIndex].SaleQuantity * this.models[rowIndex].SaleRate) - (this.models[rowIndex].SaleQuantity * this.models[rowIndex].SaleRate * this.models[rowIndex].DiscountInPercent / 100);
+  }
+
+  addRow() {
+    // console.log(rowIndex);
+    let newRow = new Sale();
+    newRow.ProductUnit = "Dyn";
+    this.models.push(newRow);
+
+    console.log(this.models);
+    return true;
+  }
+
+  removeRow(rowIndex) {
+    console.log(rowIndex);
+    if (this.models.length == 1) {
+      return false;
+    } else {
+      this.models.splice(rowIndex, 1);
+      return true;
+    }
   }
 
 }

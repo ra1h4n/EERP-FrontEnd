@@ -5,6 +5,7 @@ import { AddProductComponent } from './products/add-product/add-product.componen
 import { AddPurchaseComponent } from './purchases/add-purchase/add-purchase.component';
 import { AddSaleComponent } from './sales/add-sale/add-sale.component';
 import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.component';
+import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'suppliers/add', component: AddSupplierComponent
+  },
+  {
+    path: 'customers/add', component: AddCustomerComponent
   }
 ];
 
