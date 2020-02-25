@@ -11,6 +11,7 @@ import { AddPurchaseComponent } from './purchases/add-purchase/add-purchase.comp
 import { AddSaleComponent } from './sales/add-sale/add-sale.component';
 import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
+import { ChartOfAccountComponent } from './accounts/chart-of-account/chart-of-account.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
     AddPurchaseComponent,
     AddSaleComponent,
     AddSupplierComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    ChartOfAccountComponent
   ],
   imports: [
     BrowserModule,

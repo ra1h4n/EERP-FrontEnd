@@ -6,6 +6,7 @@ import { AddPurchaseComponent } from './purchases/add-purchase/add-purchase.comp
 import { AddSaleComponent } from './sales/add-sale/add-sale.component';
 import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
+import { ChartOfAccountComponent } from './accounts/chart-of-account/chart-of-account.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,9 @@ const routes: Routes = [
   },
   {
     path: 'customers/add', component: AddCustomerComponent
+  },
+  {
+    path: 'accounts/chart-of-account', component: ChartOfAccountComponent
   }
 ];
 
