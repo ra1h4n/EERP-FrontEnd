@@ -7,8 +7,9 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
 import { FormsModule } from "@angular/forms";
-import { AddCompanyComponent } from './products/add-company/add-company.component';
 import { AddPurchaseComponent } from './purchases/add-purchase/add-purchase.component';
+import { AddSaleComponent } from './sales/add-sale/add-sale.component';
+import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { AddPurchaseComponent } from './purchases/add-purchase/add-purchase.comp
     SideMenuComponent,
     DashboardComponent,
     AddProductComponent,
-    AddCompanyComponent,
-    AddPurchaseComponent
+    AddPurchaseComponent,
+    AddSaleComponent,
+    AddSupplierComponent
   ],
   imports: [
     BrowserModule,

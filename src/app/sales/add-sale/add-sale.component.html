@@ -1,0 +1,126 @@
+<div class="jumbotron">
+    <h1>Add New Sale</h1>
+    <form (ngSubmit)="onSubmit()" #addSaleForm="ngForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="CustomerName">Customer Name</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.CustomerName"
+                        name="CustomerName" #CustomerName="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="CustomerPhone">Phone</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.CustomerPhone"
+                        name="CustomerPhone" #CustomerPhone="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="CustomerAddress">Address</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.CustomerAddress"
+                        name="CustomerAddress" #CustomerAddress="ngModel">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="SaleDate">Date</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SaleDate" name="SaleDate"
+                        #SaleDate="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="PaymentType">Payment Type</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.PaymentType" name="PaymentType"
+                        #PaymentType="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="SaleDetails">Sale Details</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SaleDetails" name="SaleDetails"
+                        #SaleDetails="ngModel">
+                </div>
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Batch No</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Product Name</th>
+                        <th>Available Stock</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Discount %</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select class="form-control" [(ngModel)]="model.BatchNo" name="BatchNo" #BatchNo="ngModel">
+                                <option *ngFor="let batch of this.Batches" [value]="batch">
+                                    {{batch}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-control" [(ngModel)]="model.Category" name="Category"
+                                #Category="ngModel">
+                                <option *ngFor="let category of this.Categories" [value]="category">
+                                    {{category}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-control" [(ngModel)]="model.Brand" name="Brand" #Brand="ngModel">
+                                <option *ngFor="let brand of this.Brands" [value]="brand">
+                                    {{brand}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-control" [(ngModel)]="model.ProductName" name="ProductName"
+                                #ProductName="ngModel">
+                                <option *ngFor="let name of this.ProductNames" [value]="name">
+                                    {{name}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" required [(ngModel)]="model.AvailableQuantity"
+                                name="AvailableQuantity" #AvailableQuantity="ngModel" readonly>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" required [(ngModel)]="model.ProductUnit"
+                                name="ProductUnit" #ProductUnit="ngModel" readonly>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" required [(ngModel)]="model.SaleQuantity"
+                                name="SaleQuantity" #SaleQuantity="ngModel" placeholder="0"
+                                (ngModelChange)="updateTotal()">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" required [(ngModel)]="model.SaleRate"
+                                name="SaleRate" #SaleRate="ngModel" placeholder="0" (ngModelChange)="updateTotal()">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" required [(ngModel)]="model.DiscountInPercent"
+                                name="DiscountInPercent" #DiscountInPercent="ngModel" (ngModelChange)="updateTotal()">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" [(ngModel)]="model.Total" name="Total"
+                                #Total="ngModel" readonly>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

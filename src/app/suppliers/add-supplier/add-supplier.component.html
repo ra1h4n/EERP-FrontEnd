@@ -1,0 +1,39 @@
+<div class="jumbotron">
+    <h1>Add New Supplier</h1>
+
+    <form (ngSubmit)="onSubmit()" #addSupplierForm="ngForm">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="form-group">
+                    <label for="SupplierName">Supplier Name</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SupplierName"
+                        name="SupplierName" #SupplierName="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="SupplierMobile">Mobile No</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SupplierMobile"
+                        name="SupplierMobile" #SupplierMobile="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="SupplierAddress">Supplier Address</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SupplierAddress"
+                        name="SupplierAddress" #SupplierAddress="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="SupplierDetails">SupplierDetails</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SupplierDetails"
+                        name="SupplierDetails" #SupplierDetails="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="SupplierPreviousBalance">Supplier Previous Balance</label>
+                    <input type="text" class="form-control" required [(ngModel)]="model.SupplierPreviousBalance"
+                        name="SupplierPreviousBalance" #SupplierPreviousBalance="ngModel">
+                </div>
+                <button type="submit" class="btn btn-success submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
