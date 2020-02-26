@@ -14,6 +14,10 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
 import { ChartOfAccountComponent } from './accounts/chart-of-account/chart-of-account.component';
 import { AddCategoryComponent } from './products/add-category/add-category.component';
 import { AddBrandComponent } from './products/add-brand/add-brand.component';
+import { HttpClientModule } from "@angular/common/http";
+import { ManageCustomerComponent } from './customers/manage-customer/manage-customer.component';
+import { AddNewBankComponent } from './banks/add-new-bank/add-new-bank.component';
+import { ManageBanksComponent } from './banks/manage-banks/manage-banks.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +31,16 @@ import { AddBrandComponent } from './products/add-brand/add-brand.component';
     AddCustomerComponent,
     ChartOfAccountComponent,
     AddCategoryComponent,
-    AddBrandComponent
+    AddBrandComponent,
+    ManageCustomerComponent,
+    AddNewBankComponent,
+    ManageBanksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h1>Manage Customers</h1>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Bank Name</th>
+                <th>Account Name</th>
+                <th>Account No</th>
+                <th>Branch</th>
+                <th>Bank Sign</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let model of modelData">
+                <td>{{model.BankName}}</td>
+                <td>{{model.AccountName}}</td>
+                <td>{{model.AccountNo}}</td>
+                <td>{{model.Branch}}</td>
+                <td>{{model.BankSign}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

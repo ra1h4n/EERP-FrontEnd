@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h1>Manage Customers</h1>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let model of modelData">
+                <td>{{model.CustomerCode}}</td>
+                <td>{{model.CustomerName}}</td>
+                <td>{{model.CustomerMobile}}</td>
+                <td>{{model.CustomerAddress}}</td>
+                <td>{{model.CustomerEmail}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

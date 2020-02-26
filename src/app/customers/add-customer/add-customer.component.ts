@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/shared/models/customer.model';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-customer',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AddCustomerComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,17 @@ export class AddCustomerComponent implements OnInit {
   model = new Customer();
   onSubmit() {
     console.log(this.model);
+
+    this.http.post("http://localhost:60842/api/Customers", this.model, {
+      headers: { "Content-Type": "application/json" }
+    }).subscribe(
+      data => {
+        alert("Data Entry Success");
+      },
+      error => {
+        alert("Error Occured");
+      }
+    );
 
     this.router.navigate(['/dashboard']);
   }

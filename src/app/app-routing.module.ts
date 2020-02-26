@@ -9,6 +9,9 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
 import { ChartOfAccountComponent } from './accounts/chart-of-account/chart-of-account.component';
 import { AddCategoryComponent } from './products/add-category/add-category.component';
 import { AddBrandComponent } from './products/add-brand/add-brand.component';
+import { ManageCustomerComponent } from './customers/manage-customer/manage-customer.component';
+import { AddNewBankComponent } from './banks/add-new-bank/add-new-bank.component';
+import { ManageBanksComponent } from './banks/manage-banks/manage-banks.component';
 
 
 const routes: Routes = [
@@ -40,7 +43,16 @@ const routes: Routes = [
     path: 'customers/add', component: AddCustomerComponent
   },
   {
+    path: 'customers/manage', component: ManageCustomerComponent
+  },
+  {
     path: 'accounts/chart-of-account', component: ChartOfAccountComponent
+  },
+  {
+    path: 'banks/add', component: AddNewBankComponent
+  },
+  {
+    path: 'banks/manage', component: ManageBanksComponent
   }
 ];
 
