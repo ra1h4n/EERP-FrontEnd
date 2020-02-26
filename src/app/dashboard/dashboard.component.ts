@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(btoa("admin::r4sel::123456"))
   }
 
 }

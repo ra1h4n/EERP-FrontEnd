@@ -1,5 +1,5 @@
 export class Product {
-    Company: string;
+    Supplier: string;
     Category: string;
     Brand: string;
     Name: string;

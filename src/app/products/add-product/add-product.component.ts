@@ -15,7 +15,7 @@ export class AddProductComponent implements OnInit {
   }
 
   // Some Bulk Data
-  Companies = ["Best Electronics", "Vision Electronics", "MK Electronics", "Chowdhury Electronics"]
+  Suppliers = ["Best Electronics", "Vision Electronics", "MK Electronics", "Chowdhury Electronics"]
   Categories = ["Television", "Refrigerator", "Display", "Air Conditionar", "Air Cooler"]
   Brands = ["Sony", "Walton", "Samsung", "Vision", "Hundai", "Singer"]
 

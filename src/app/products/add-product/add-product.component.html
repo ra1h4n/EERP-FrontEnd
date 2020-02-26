@@ -4,12 +4,12 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="Company">Company</label>
-                    <!-- <input type="text" class="form-control" required [(ngModel)]="model.Company" name="Company"
-                        #Company="ngModel"> -->
-                    <select class="form-control" [(ngModel)]="model.Company" name="Company" #Company="ngModel">
-                        <option *ngFor="let company of this.Companies" [value]="company">
-                            {{company}}
+                    <label for="Supplier">Supplier</label>
+                    <!-- <input type="text" class="form-control" required [(ngModel)]="model.Supplier" name="Supplier"
+                        #Supplier="ngModel"> -->
+                    <select class="form-control" [(ngModel)]="model.Supplier" name="Supplier" #Supplier="ngModel">
+                        <option *ngFor="let Supplier of this.Suppliers" [value]="Supplier">
+                            {{Supplier}}
                         </option>
                     </select>
                 </div>

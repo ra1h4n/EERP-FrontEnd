@@ -7,6 +7,8 @@ import { AddSaleComponent } from './sales/add-sale/add-sale.component';
 import { AddSupplierComponent } from './suppliers/add-supplier/add-supplier.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 import { ChartOfAccountComponent } from './accounts/chart-of-account/chart-of-account.component';
+import { AddCategoryComponent } from './products/add-category/add-category.component';
+import { AddBrandComponent } from './products/add-brand/add-brand.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,12 @@ const routes: Routes = [
   },
   {
     path: 'products/add', component: AddProductComponent
+  },
+  {
+    path: 'products/add-category', component: AddCategoryComponent
+  },
+  {
+    path: 'products/add-brand', component: AddBrandComponent
   },
   {
     path: 'purchases/add', component: AddPurchaseComponent
