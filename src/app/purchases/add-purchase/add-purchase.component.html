@@ -59,23 +59,26 @@
                 <tbody>
                     <tr *ngFor="let model of models; let i = index;">
                         <td>
-                            <select class="form-control" [(ngModel)]="model.Category" name="{{i}}Category">
-                                <option *ngFor="let category of this.Categories" [value]="category">
-                                    {{category}}
+                            <select class="form-control" [(ngModel)]="model.Category" name="{{i}}Category"
+                                (change)="onCategoryChange($event.target.value)">
+                                <option *ngFor="let category of this.Categories[i]" [value]="category.CategoryCode">
+                                    {{category.CategoryName}}
                                 </option>
                             </select>
                         </td>
                         <td>
-                            <select class="form-control" [(ngModel)]="model.Brand" name="{{i}}Brand">
-                                <option *ngFor="let brand of this.Brands" [value]="brand">
-                                    {{brand}}
+                            <select class="form-control" [(ngModel)]="model.Brand" name="{{i}}Brand"
+                                (change)="onBrandChange($event.target.value, i)">
+                                <option *ngFor="let brand of this.Brands[i]" [value]="brand.BrandCode">
+                                    {{brand.BrandName}}
                                 </option>
                             </select>
                         </td>
                         <td>
-                            <select class="form-control" [(ngModel)]="model.ProductName" name="{{i}}ProductName">
-                                <option *ngFor="let name of this.ProductNames" [value]="name">
-                                    {{name}}
+                            <select class="form-control" [(ngModel)]="model.ProductName" name="{{i}}ProductName"
+                                (change)="OnProductSelect($event.target.value, i)">
+                                <option *ngFor="let name of this.ProductNames[i]" [value]="name.ProductCode">
+                                    {{name.ProductName}}
                                 </option>
                             </select>
                         </td>
