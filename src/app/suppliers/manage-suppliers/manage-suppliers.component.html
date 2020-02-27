@@ -1,0 +1,29 @@
+<div class="jumbotron">
+    <h1>Manage Suppliers</h1>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Details</th>
+                <th>Balance</th>
+                <!-- <th>Bank Sign</th> -->
+                <th><a routerLink="/suppliers/add"><i class="fa fa-plus"></i></a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let model of modelData">
+                <td>{{model.SupplierName}}</td>
+                <td>{{model.SupplierMobile}}</td>
+                <td>{{model.SupplierAddress}}</td>
+                <td>{{model.SupplierDetails}}</td>
+                <td>{{model.SupplierPreCreditBalance}}</td>
+                <td>
+                    <button (click)="editSupplier(model.SupplierCode)"><i class="fa fa-edit"></i></button>
+                    <button (click)="deleteSupplier(model.SupplierCode)"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

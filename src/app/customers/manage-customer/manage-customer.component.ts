@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CommonService } from 'src/app/shared/services/common.service';
 
 @Component({
   selector: 'app-manage-customer',
@@ -8,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ManageCustomerComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cs: CommonService) { }
 
   public modelData;
   ngOnInit() {
-    this.http.get("http://localhost:60842/api/Customers").subscribe(
+    this.http.get(this.cs.getApiURL() + "Customers/GetCustomerInfoes").subscribe(
       data => {
         this.modelData = data;
       },

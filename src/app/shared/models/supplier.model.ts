@@ -3,5 +3,5 @@ export class Supplier {
     SupplierMobile: string;
     SupplierAddress: string;
     SupplierDetails: string;
-    SupplierPreviousBalance: number;
+    SupplierPreCreditBalance: number;
 }

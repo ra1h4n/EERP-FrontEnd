@@ -7,7 +7,8 @@
                 <th>Account Name</th>
                 <th>Account No</th>
                 <th>Branch</th>
-                <th>Bank Sign</th>
+                <!-- <th>Bank Sign</th> -->
+                <th><a routerLink="/banks/add"><i class="fa fa-plus"></i></a></th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +17,11 @@
                 <td>{{model.AccountName}}</td>
                 <td>{{model.AccountNo}}</td>
                 <td>{{model.Branch}}</td>
-                <td>{{model.BankSign}}</td>
+                <!-- <td>{{model.BankSign}}</td> -->
+                <td>
+                    <button (click)="editBank(model.BankCode)"><i class="fa fa-edit"></i></button>
+                    <button (click)="deleteBank(model.BankCode)"><i class="fa fa-trash"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>
