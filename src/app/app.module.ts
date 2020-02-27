@@ -19,6 +19,7 @@ import { ManageCustomerComponent } from './customers/manage-customer/manage-cust
 import { AddNewBankComponent } from './banks/add-new-bank/add-new-bank.component';
 import { ManageBanksComponent } from './banks/manage-banks/manage-banks.component';
 import { ManageSuppliersComponent } from './suppliers/manage-suppliers/manage-suppliers.component';
+import { ManageProductsComponent } from './products/manage-products/manage-products.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ManageSuppliersComponent } from './suppliers/manage-suppliers/manage-su
     ManageCustomerComponent,
     AddNewBankComponent,
     ManageBanksComponent,
-    ManageSuppliersComponent
+    ManageSuppliersComponent,
+    ManageProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -11,15 +11,8 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    console.log(btoa("admin::r4sel::123456"));
-    this.http.get("http://localhost:60842/api/Customers").subscribe(
-      data => {
-        console.log(data);
-      },
-      error => {
-        console.log("Error Occurred", error);
-      }
-    )
+    // console.log(btoa("admin::r4sel::123456"));
+
   }
 
 }

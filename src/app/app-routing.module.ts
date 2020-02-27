@@ -13,6 +13,7 @@ import { ManageCustomerComponent } from './customers/manage-customer/manage-cust
 import { AddNewBankComponent } from './banks/add-new-bank/add-new-bank.component';
 import { ManageBanksComponent } from './banks/manage-banks/manage-banks.component';
 import { ManageSuppliersComponent } from './suppliers/manage-suppliers/manage-suppliers.component';
+import { ManageProductsComponent } from './products/manage-products/manage-products.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: 'products/add-brand', component: AddBrandComponent
+  },
+  {
+    path: 'products/manage', component: ManageProductsComponent
   },
   {
     path: 'purchases/add', component: AddPurchaseComponent
